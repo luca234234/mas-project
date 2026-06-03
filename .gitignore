@@ -1,0 +1,12 @@
+target/
+data/
+*.db
+*.log
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+APDescription.txt
+MTPs-Main-Container.txt
+dependency-reduced-pom.xml
