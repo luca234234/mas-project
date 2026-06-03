@@ -1,8 +1,12 @@
 # Multi-Agent Video Game Marketplace
 
-A small JADE + Swing + SQLite project for a simulated digital game storefront.
+## Problem domain
 
-## Agent types
+This project simulates a digital video game storefront where autonomous agents buy, sell, regulate, review, recommend, and track game deals in a dynamic marketplace.
+
+## Architecture
+
+The application uses a local JADE multi-agent container with six agent types:
 
 1. BuyerAgent — receives GUI commands, sends Contract Net CFPs, accepts the best seller proposal.
 2. SellerPublisherAgent — lists games, proposes prices, records sales, runs promotions.
@@ -10,6 +14,8 @@ A small JADE + Swing + SQLite project for a simulated digital game storefront.
 4. RecommendationAgent — returns personalized suggestions from buyer history and preferences.
 5. CriticAgent — generates/aggregates review scores and flags suspicious review patterns.
 6. DealAggregatorAgent — collects seller discounts and broadcasts deal notifications.
+
+Agents communicate with FIPA ACL messages. Buyer/seller negotiation uses the FIPA Contract Net Protocol. The Swing GUI sends user actions to the BuyerAgent through JADE O2A objects and shows marketplace data from SQLite. SQLite stores games, listings, purchases, reviews, reputation, and deals.
 
 ## Tech stack
 
@@ -20,7 +26,14 @@ A small JADE + Swing + SQLite project for a simulated digital game storefront.
 - SQLite through JDBC
 - Maven
 
-## Run
+## Starting the project
+
+Requirements:
+
+- Java 17 or newer
+- Maven
+
+Run from the project root:
 
 ```bash
 mvn clean package
