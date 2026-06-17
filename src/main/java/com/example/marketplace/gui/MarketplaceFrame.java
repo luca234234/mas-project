@@ -29,6 +29,7 @@ import java.awt.GridLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.List;
+import java.util.Locale;
 
 public class MarketplaceFrame extends JFrame {
     private final AgentController buyerAgent;
@@ -187,6 +188,6 @@ public class MarketplaceFrame extends JFrame {
     }
 
     private String money(double value) {
-        return String.format("$%.2f", value);
+        return String.format(Locale.US, "$%.2f", value);
     }
 }
